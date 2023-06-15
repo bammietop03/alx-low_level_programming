@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
- * main -  will print the statement in puts 
+ * main - Entry point
  *
- * return : will return 0
+ * Return: always 0
  */
 int main(void)
 {
