@@ -1,6 +1,10 @@
 #include <stdio.h>
 
-/*This function will print the statement in puts*/
+/*
+ * main -  will print the statement in puts
+ * 
+ * return : will return 0
+ */
 int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
