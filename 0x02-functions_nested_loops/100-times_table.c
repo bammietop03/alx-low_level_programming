@@ -6,19 +6,19 @@
  */
 void print_times_table(int n)
 {
-	int i, j, k;
+	int num1, num2, k;
 
 	if (n >= 0 && n <= 15)
 	{
-		for (i = 0; i <= n; i++)
+		for (num1 = 0; num1 <= n; num1++)
 		{
-			for (j = 0; j <= n; j++)
+			for (num2 = 0; num2 <= n; num2++)
 			{
-				k = j * i;
-				if (j == 0)
+				k = num2 * num1;
+				if (num2 == 0)
 				{
 					_putchar(k + '0');
-				} else if (k < 10 && j != 0)
+				} else if (k < 10 && num2 != 0)
 				{
 					_putchar(',');
 					_putchar(' ');
