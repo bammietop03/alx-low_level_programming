@@ -24,7 +24,7 @@ int main(void)
 		current = next;
 	}
 
-	printf("The sum is %d\n", sumTotal);
+	printf("%d\n", sumTotal);
 
 	return (0);
 }
