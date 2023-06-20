@@ -9,6 +9,7 @@ int main(void)
 	int prev = 1;
 	int current = 2;
 	int sumTotal = 0;
+	int next = 0;
 
 	while (current <= 4000000)
 
@@ -17,7 +18,7 @@ int main(void)
 		if (current % 2 == 0)
 			sumTotal += current;
 
-		int next = prev + current;
+		next = prev + current;
 
 		prev = current;
 		current = next;
