@@ -6,13 +6,13 @@
  */
 int main(void)
 {
-	long long int a = 2;
-	long long int b = 1;
-	long long int c;
+	unsigned long int a = 2;
+	unsigned long int b = 1;
+	unsigned long int c;
 	int n;
 
-	printf("%lld, ", b);
-	printf("%lld, ", a);
+	printf("%lu, ", b);
+	printf("%lu, ", a);
 
 	for (n = 3; n <= 50; n++)
 
@@ -22,12 +22,12 @@ int main(void)
 		if (n == 50)
 
 		{
-			printf("%lld", c);
+			printf("%lu", c);
 		}
 		else
 
 		{
-			printf("%lld, ", c);
+			printf("%lu, ", c);
 			b = a;
 			a = c;
 		}
