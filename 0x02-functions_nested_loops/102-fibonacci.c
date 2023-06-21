@@ -6,24 +6,35 @@
  */
 int main(void)
 {
-	int counter = 2;
-	long int a = 1;
-	long int b = a + 1;
-	long int c = a + b;
+	long long int a = 2;
+	long long int b = 1;
+	long long int c;
+	int n;
 
-	printf("%ld, %ld, ", a, b);
-	while (counter < 50)
+	printf("%lld, ", b);
+	printf("%lld, ", a);
+
+	for (n = 3; n <= 50; n++)
+
 	{
-		printf("%ld", c);
-		counter++;
-		a = b;
-		b = c;
+
 		c = a + b;
-		if (counter < 50)
+		if (n == 50)
+
 		{
-			printf(", ");
+			printf("%lld", c);
 		}
+		else
+
+		{
+			printf("%lld, ", c);
+			b = a;
+			a = c;
+		}
+
 	}
 	printf("\n");
+
 	return (0);
 }
+
