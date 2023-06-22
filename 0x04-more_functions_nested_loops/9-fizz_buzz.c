@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 /**
  * main - prints 1 - 100 and prints fizz if the number is divisible by 3
  * and buzz when it is divisible by 5
