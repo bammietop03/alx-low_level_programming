@@ -1,10 +1,11 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
+
 /**
- * main - prints 1 - 100 and prints fizz if the number is divisible by 3
- * and buzz when it is divisible by 5
- *
- * Return: 0 (success)
+ * main - prints the numbers from 1 to 100, followed by a new line
+ * but for multiples of three prints Fizz instead of the number
+ * and for the multiples of five prints Buzz
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
