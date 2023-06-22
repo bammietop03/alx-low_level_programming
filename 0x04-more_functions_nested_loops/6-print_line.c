@@ -1,22 +1,22 @@
 #include "main.h"
+
 /**
- * print_line - prints '_' the amount of n variable
- * @n: is the parameter that will take the argument
+ * print_line - prints _
+ * @n: number of times the character _ will be printed
  */
 void print_line(int n)
 {
 	if (n <= 0)
 	{
-		putchar('\n');
-	}
-	else
+		_putchar('\n');
+	} else
 	{
 		int i;
 
 		for (i = 1; i <= n; i++)
 		{
-			putchar('_');
+			_putchar('_');
 		}
-		putchar('\n');
+		_putchar('\n');
 	}
 }
