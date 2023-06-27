@@ -12,7 +12,7 @@ A low-level programming language is a programming language that provides little 
 * [Credits](#credits)
 
 ## About
-At Holberton School, there are several tracks to become a full stack software engineer. One of those tracks is the low level programming track which covers the following:
+At ALX, there are several tracks to become a full stack software engineer. One of those tracks is the low level programming track which covers the following:
 
 - Compilation
 - Commenting code and following a coding style standard
