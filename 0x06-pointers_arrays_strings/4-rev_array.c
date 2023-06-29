@@ -12,14 +12,16 @@
 void reverse_array(int *a, int n)
 {
 	int j = n - 1;
+	int k = 0;
 
-	while (j >= 0)
+	while (j >= k)
 	{
-		if (j == 0)
-			printf("%d", a[j]);
-		else
-			printf("%d, ", a[j]);
+		int temp = a[k];
+
+		a[k] = a[j];
+		a[j] = temp;
 		j--;
+		k++;
 	}
-	printf("\n");
+
 }
