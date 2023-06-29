@@ -23,11 +23,7 @@ char *cap_string(char *str)
 			if (islower(str[i]))
 				str[i] = toupper(str[i]);
 		}
-		else
-		{
-			if (isupper(str[i]))
-				str[i] = tolower(str[i]);
-		}
+
 		i++;
 	}
 
