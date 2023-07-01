@@ -1,1 +1,3 @@
-More pointers, array and stringd
+More pointers, array and string
+
+this project was fun
