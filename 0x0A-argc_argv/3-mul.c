@@ -1,16 +1,24 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
- * main - prints its name
+ * main - that multiplies two numbers
  *
  * @argc: count of the arguments supplied to the program
  * @argv: is an array of pointers to the strings which are those arguments
  * Return: 0
  */
 
-int main(int argc __attribute__((unused)),  char *argv[])
+int main(int argc,  char *argv[])
 {
-	printf("%s\n", argv[0]);
+	int i;
+	int sum = 1;
+
+	for (i = 1; i < argc; i++)
+	{
+		sum *= atoi(argv[i]);
+	}
+	printf("%d\n", sum);
 
 	return (0);
 }
