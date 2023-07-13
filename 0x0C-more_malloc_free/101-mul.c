@@ -56,13 +56,10 @@ void multiply(char *num1, char *num2)
 		printf("Error\n");
 		exit(1);
 	}
-
-
 	for (i = len1 - 1; i >= 0; i--)
 	{
 		carry = 0;
 		digit1 = num1[i] - '0';
-
 		for (j = len2 - 1; j >= 0; j--)
 		{
 			digit2 = num2[j] - '0';
@@ -70,25 +67,20 @@ void multiply(char *num1, char *num2)
 			result[i + j + 1] = temp % 10;
 			carry = temp / 10;
 		}
-
 		if (carry > 0)
 		{
 			result[i + j + 1] += carry;
 		}
 	}
-
-
 	while (start < result_len - 1 && result[start] == 0)
 	{
 		start++;
 	}
-
 	for (i = start; i < result_len; i++)
 	{
 		printf("%d", result[i]);
 	}
 	printf("\n");
-
 	free(result);
 }
 
