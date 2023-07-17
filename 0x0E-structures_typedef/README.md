@@ -1,4 +1,4 @@
-## learning Structures and Typedef
+## Learning Structures and Typedef
 A structure is a user defined data type available in C that allows to combine data items of different kinds.
 
 In C, a structure is a user-defined data type that allows you to group together multiple variables of different data types under a single name. It is a way to create a custom data type that can hold related pieces of information as a single unit.
@@ -53,8 +53,8 @@ In this example, we have defined a structure named Point with two members, x and
 
 	struct Point 
 	{
-    		int x;
-    		int y;
+		int x;
+		int y;
 	};
 
 	void printPoint(struct Point p) 
@@ -64,22 +64,22 @@ In this example, we have defined a structure named Point with two members, x and
 
 	void updatePoint(struct Point *p, int newX, int newY) 
 	{
-    		p->x = newX;
-    		p->y = newY;
+		p->x = newX;
+		p->y = newY;
 	}
 
 	int main(void) 
 	{
-    		struct Point p1 = {0, 0};
-    		struct Point p2 = {3, 5};
+		struct Point p1 = {0, 0};
+		struct Point p2 = {3, 5};
 
-    		printPoint(p1);
-    		printPoint(p2);
+		printPoint(p1);
+		printPoint(p2);
 
-    		updatePoint(&p1, 10, 20);
-    		printPoint(p1);
+		updatePoint(&p1, 10, 20);
+		printPoint(p1);
 
-    		return 0;
+		return 0;
 	}
 
 ## Output:
