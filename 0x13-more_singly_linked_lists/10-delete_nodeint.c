@@ -30,7 +30,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	}
 	else
 	{
-		while (index != 0)
+		while (curr && index != 0)
 		{
 			ptr = curr;
 			curr = curr->next;
