@@ -9,37 +9,35 @@
  * @head: points to the head of the linked list
  * @index: index pf the node to be deleted
  *
- * Return: temp
+ * Return: 1 if success
  */
 
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	listint_t *ptr, *curr;
-	
+	unsigned int i = 0;
+
+	curr = *head;
 	if (!*head)
 		return (-1);
 
-	ptr = *head;
-	curr = *head;
 
 	if (index == 0)
 	{
-		*head = curr->next;
-		free(curr);
-		curr = NULL;
-		return (1);
+		curr = curr->next;
+		free(*head);
+		*head = curr;
 	}
 	else
 	{
-		while (curr && index != 0)
+		while (curr && i != index - 1)
 		{
-			ptr = curr;
+			i++;
 			curr = curr->next;
-			index--;
 		}
-		ptr->next = curr->next;
-		free(curr);
-		curr = NULL;
+		ptr = curr->next;
+		curr->next = curr->next->next;
+		free(ptr);
 	}
 	return (1);
 }
