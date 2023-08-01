@@ -1,4 +1,6 @@
 #include "lists.h"
+#include <stdlib.h>
+
 /**
  * delete_nodeint_at_index - deletes a node
  * @head: linked list at head
