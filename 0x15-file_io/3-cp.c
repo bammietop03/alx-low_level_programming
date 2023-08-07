@@ -32,7 +32,7 @@ int main(int ac, char **av)
 		error("Usage: cp file_from file_to", "", 97);
 	fdFrum = open(av[1], O_RDONLY);
 	if (fdFrum == -1)
-		error("Error: Can't read from file %s\n", av[1], 98);
+		error("Error: Can't read from file %s", av[1], 98);
 	fdToo = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fdToo == -1)
 	{
