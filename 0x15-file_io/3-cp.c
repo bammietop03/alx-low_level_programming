@@ -4,8 +4,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-void helper(ssize_t *read, int *file_from, int *file_to,
-		char *buffer, char *arg);
+void helper(ssize_t *read, int *file_from, int *file_to, char *arg);
 /**
  * main - copies the content of a file to another file.
  *
@@ -18,7 +17,7 @@ void helper(ssize_t *read, int *file_from, int *file_to,
 int main(int argc, char *argv[])
 {
 	int file_from, file_to;
-	char *buffer;
+	char buffer[BUFFER_SIZE];
 	ssize_t readf, written;
 
 	if (argc != 3)
@@ -39,7 +38,6 @@ int main(int argc, char *argv[])
 		close(file_from);
 		exit(99);
 	}
-	buffer = malloc(sizeof(char) * BUFFER_SIZE);
 	while ((readf = read(file_from, buffer, BUFFER_SIZE)) > 0)
 	{
 		written = write(file_to, buffer, readf);
@@ -48,17 +46,14 @@ int main(int argc, char *argv[])
 			dprintf(2, "Error: Can't write to %s\n", argv[2]);
 			close(file_from);
 			close(file_to);
-			free(buffer);
 			exit(99);
 		}
 	}
-	helper(&readf, &file_from, &file_to, buffer, argv[1]);
-	free(buffer);
+	helper(&readf, &file_from, &file_to, argv[1]);
 	return (0);
 }
 
-void helper(ssize_t *readf, int *file_from, int *file_to,
-		char *buffer, char *arg)
+void helper(ssize_t *readf, int *file_from, int *file_to, char *arg)
 {
 
 	if (*readf == -1)
@@ -66,7 +61,6 @@ void helper(ssize_t *readf, int *file_from, int *file_to,
 		dprintf(2, "Error: Can't read from file %s\n", arg);
 		close(*file_from);
 		close(*file_to);
-		free(buffer);
 		exit(98);
 	}
 	if (close(*file_from) == -1)
