@@ -2,6 +2,21 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
+
+/**
+ * error - prints the error message
+ *
+ * @msg: contains the error message
+ * @filename: contains the argument passed
+ * @exitCode: contains the exit code
+ *
+ */
+void error(const char *msg, const char *filename, int exitCode)
+{
+	dprintf(STDERR_FILENO, msg, filename);
+	dprintf(STDERR_FILENO, "\n");
+	exit(exitCode);
+}
 /**
  * main - program to copy
  * @ac: argument count
@@ -14,16 +29,10 @@ int main(int ac, char **av)
 	char buff[1024];
 
 	if (ac != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
+		error("Usage: cp file_from file_to", "", 97);
 	fdFrum = open(av[1], O_RDONLY);
 	if (fdFrum == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-		exit(98);
-	}
+		error("Error: Can't read from file %s\n", av[1], 98);
 	fdToo = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fdToo == -1)
 	{
