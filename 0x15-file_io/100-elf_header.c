@@ -29,34 +29,35 @@ void print_error(const char *msg) {
 }
 
 void print_magic(unsigned char *e_ident) {
-    printf("  Magic:   ");
-    for (int i = 0; i < EI_NIDENT; i++) {
-        printf("%02x ", e_ident[i]);
-    }
-    printf("\n");
+	int i;
+	printf("  Magic:   ");
+	for (i = 0; i < EI_NIDENT; i++) {
+		printf("%02x ", e_ident[i]);
+	}
+	printf("\n");
 }
 
 void print_class(unsigned char class) {
-    printf("  Class:                             ");
-    switch (class) {
-        case 1:
-            printf("ELF32\n");
-            break;
-        case 2:
-            printf("ELF64\n");
-            break;
-        default:
-            printf("Unknown\n");
-            break;
-    }
+	printf("  Class:                             ");
+	switch (class) {
+		case 1:
+			printf("ELF32\n");
+			break;
+		case 2:
+			printf("ELF64\n");
+			break;
+		default:
+			printf("Unknown\n");
+			break;
+	}
 }
 
 void print_data(unsigned char data) {
-    printf("  Data:                              ");
-    switch (data) {
-        case 1:
-            printf("2's complement, little endian\n");
-            break;
+	printf("  Data:                              ");
+	switch (data) {
+		case 1:
+			printf("2's complement, little endian\n");
+			break;
         case 2:
             printf("2's complement, big endian\n");
             break;
@@ -67,16 +68,18 @@ void print_data(unsigned char data) {
 }
 
 int main(int argc, char *argv[]) {
+	int fd;
+	Elf64_Ehdr header;
+
     if (argc != 2) {
         print_error("Usage: elf_header elf_filename");
     }
 
-    int fd = open(argv[1], O_RDONLY);
+	fd = open(argv[1], O_RDONLY);
     if (fd == -1) {
         print_error("Error opening file");
     }
 
-    Elf64_Ehdr header;
     if (read(fd, &header, sizeof(Elf64_Ehdr)) != sizeof(Elf64_Ehdr)) {
         close(fd);
         print_error("Error reading ELF header");
