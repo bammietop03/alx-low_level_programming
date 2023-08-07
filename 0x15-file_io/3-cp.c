@@ -20,7 +20,6 @@ int main(int argc, char *argv[])
 	int file_from, file_to;
 	char *buffer;
 	ssize_t readf, written;
-	char *arg = argv[1];
 
 	if (argc != 3)
 	{
@@ -53,7 +52,7 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	}
-	helper(&readf, &file_from, &file_to, buffer, arg);
+	helper(&readf, &file_from, &file_to, buffer, argv[1]);
 	free(buffer);
 	return (0);
 }
