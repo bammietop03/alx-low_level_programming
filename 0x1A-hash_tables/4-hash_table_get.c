@@ -25,6 +25,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	{
 		if (strcmp(search->key, key) == 0)
 			return (search->value);
+		search = search->next;
 	}
 
 	return (NULL);
