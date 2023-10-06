@@ -21,7 +21,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	search = ht->array[index];
 
-	if (search != NULL)
+	while (search != NULL)
 	{
 		if (strcmp(search->key, key) == 0)
 			return (search->value);
